@@ -172,9 +172,9 @@ func genAnswer(h *ChatHandler, w http.ResponseWriter, chatSessionUuid string, ch
 	}
 
 	// calc total tokens
-	totalTokens := lo.SumBy(msgs, func(msg Message) int32 {
-		return msg.TokenCount()
-	})
+	//totalTokens := lo.SumBy(msgs, func(msg Message) int32 {
+	//	return msg.TokenCount()
+	//})
 
 	// check if total tokens exceed limit
 	//if totalTokens > chatSession.MaxTokens*2/3 {
@@ -218,9 +218,9 @@ func regenerateAnswer(h *ChatHandler, w http.ResponseWriter, chatSessionUuid str
 	}
 
 	// calc total tokens
-	totalTokens := lo.SumBy(msgs, func(msg Message) int32 {
-		return msg.TokenCount()
-	})
+	//totalTokens := lo.SumBy(msgs, func(msg Message) int32 {
+	//	return msg.TokenCount()
+	//})
 
 	//if totalTokens > chatSession.MaxTokens*2/3 {
 	//	RespondWithError(w, http.StatusRequestEntityTooLarge, "error.token_length_exceed_limit",
