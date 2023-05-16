@@ -222,14 +222,14 @@ func regenerateAnswer(h *ChatHandler, w http.ResponseWriter, chatSessionUuid str
 		return msg.TokenCount()
 	})
 
-	if totalTokens > chatSession.MaxTokens*2/3 {
-		RespondWithError(w, http.StatusRequestEntityTooLarge, "error.token_length_exceed_limit",
-			map[string]interface{}{
-				"max_tokens":   chatSession.MaxTokens,
-				"total_tokens": totalTokens,
-			})
-		return
-	}
+	//if totalTokens > chatSession.MaxTokens*2/3 {
+	//	RespondWithError(w, http.StatusRequestEntityTooLarge, "error.token_length_exceed_limit",
+	//		map[string]interface{}{
+	//			"max_tokens":   chatSession.MaxTokens,
+	//			"total_tokens": totalTokens,
+	//		})
+	//	return
+	//}
 
 	// Determine whether the chat is a test or not
 	chatStreamFn := h.chooseChatStreamFn(chatSession, msgs)
