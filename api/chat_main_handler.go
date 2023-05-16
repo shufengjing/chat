@@ -177,14 +177,14 @@ func genAnswer(h *ChatHandler, w http.ResponseWriter, chatSessionUuid string, ch
 	})
 
 	// check if total tokens exceed limit
-	if totalTokens > chatSession.MaxTokens*2/3 {
-		RespondWithError(w, http.StatusRequestEntityTooLarge, "error.token_length_exceed_limit",
-			map[string]interface{}{
-				"max_tokens":   chatSession.MaxTokens,
-				"total_tokens": totalTokens,
-			})
-		return
-	}
+	//if totalTokens > chatSession.MaxTokens*2/3 {
+	//	RespondWithError(w, http.StatusRequestEntityTooLarge, "error.token_length_exceed_limit",
+	//		map[string]interface{}{
+	//			"max_tokens":   chatSession.MaxTokens,
+	//			"total_tokens": totalTokens,
+	//		})
+	//	return
+	//}
 
 	chatStreamFn := h.chooseChatStreamFn(chatSession, msgs)
 
